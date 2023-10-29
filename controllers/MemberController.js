@@ -7,7 +7,6 @@ const jwt_secret = process.env.JWT_SECRET;
 
 export const addMember = async (req, res) => {
     const { community, user, role } = req.body;
-    const { token } = req.cookies;
 
     if (!community || !user || !role) {
         return res.status(400).json({ error: 'Fields are required' });
